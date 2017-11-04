@@ -1,0 +1,96 @@
+﻿<p *ngIf="!student"><em>Loading Student Details please Wait ! ...</em></p>
+
+<table style="background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2"
+       cellspacing="2" *ngIf="student">
+    <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+        <td>
+            <h2>Insert Student Details : </h2>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="color:#9F000F;font-size:large" cellpadding="4" cellspacing="6">
+                <tr>
+                    <td><b>Students ID: </b> </td>
+                    <td>
+                        <input [(ngModel)]="students.StdID" value="0" style="background-color:tan" readonly>
+                    </td>
+                    <td><b>Students Name: </b> </td>
+
+                    <td>
+                        <input [(ngModel)]="students.StdName">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>Email: </b> </td>
+                    <td>
+                        <input [(ngModel)]="students.Email">
+                    </td>
+                    <td><b>Phone: </b> </td>
+                    <td>
+                        <input [(ngModel)]="students.Phone">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><b>Address: </b> </td>
+                    <td>
+                        <input [(ngModel)]="students.Address">
+                    </td>
+
+                    <td colspan="2">
+                        <button (click)=addStudentsDetails() style="background-color:#334668;color:#FFFFFF;font-size:large;width:200px;
+                                      border-color:#a2aabe;border-style:dashed;border-width:2px;">
+                            Save
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td>&nbsp; </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table style="background-color:#FFFFFF; border:solid 2px #6D7B8D; padding: 5px;width:99%;table-layout:fixed;" cellpadding="2"
+                   cellspacing="2">
+                <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                    <td width="100" align="center">Student ID</td>
+                    <td width="240" align="center">Student Name</td>
+                    <td width="240" align="center">Email</td>
+                    <td width="120" align="center">Phone</td>
+                    <td width="340" align="center">Address</td>
+                </tr>
+
+                <tbody>
+                    <tr *ngFor="let std of student">
+                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                            <span style="color:#9F000F">{{std.StdID}}</span>
+                        </td>
+
+                        <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                            <span style="color:#9F000F">{{std.StdName}}</span>
+                        </td>
+
+                        <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                            <span style="color:#9F000F">{{std.Email}}</span>
+                        </td>
+
+                        <td align="center" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                            <span style="color:#9F000F">{{std.Phone}}</span>
+                        </td>
+
+                        <td align="left" style="border: solid 1px #659EC7; padding: 5px;table-layout:fixed;">
+                            <span style="color:#9F000F">{{std.Address}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
